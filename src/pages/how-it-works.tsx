@@ -56,12 +56,7 @@ export default function HowItWorks() {
             </div>
             
             <div className="mt-8">
-              <h2 className="text-2xl font-bold mb-4">Architecture Overview</h2>
-              <div className="relative w-full h-64 border-[2px] border-black rounded-lg overflow-hidden bg-white shadow-[4px_4px_0_0_rgba(0,0,0,1)]">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <p className="text-gray-500">Detailed Architecture Diagram</p>
-                </div>
-              </div>
+              <h2 className="text-2xl font-bold mb-4">System Overview</h2>
               
               <div className="mt-6 bg-white border-[2px] border-black p-5 shadow-[4px_4px_0_0_rgba(0,0,0,1)] rounded-lg">
                 <h3 className="text-xl font-bold mb-3">Key Components</h3>

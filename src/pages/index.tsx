@@ -53,12 +53,7 @@ export default function Home() {
                 </Link>
               </div>
               
-              {/* Placeholder for system diagram */}
-              <div className="relative w-full h-48 md:h-64 border-[2px] border-black rounded-lg overflow-hidden bg-white shadow-[4px_4px_0_0_rgba(0,0,0,1)]">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <p className="text-gray-500">System Architecture Diagram</p>
-                </div>
-              </div>
+
             </div>
           </div>
         </section>
