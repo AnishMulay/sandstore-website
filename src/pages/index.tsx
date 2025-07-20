@@ -1,5 +1,4 @@
 import Layout from "../components/Layout";
-import IntroAnimation from "../components/IntroAnimation";
 import Link from "next/link";
 import Head from "next/head";
 
@@ -10,7 +9,6 @@ export default function Home() {
         <title>Sandstore - The Learning-First Distributed File System</title>
         <meta name="description" content="Sandstore is a distributed file system built for learning and experimentation" />
       </Head>
-      <IntroAnimation />
       <Layout>
         {/* Hero Section */}
         <section className="w-full max-w-4xl mb-16">
