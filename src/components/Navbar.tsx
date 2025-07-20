@@ -2,46 +2,29 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [activeSection, setActiveSection] = useState('home');
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
-      
-      // Determine which section is currently in view
-      const sections = ['home', 'how-it-works', 'devlog', 'demo', 'about-me'];
-      const sectionElements = sections.map(id => document.getElementById(id));
-      
-      const currentPosition = window.scrollY + 100; // Adding offset for navbar height
-      
-      for (let i = sectionElements.length - 1; i >= 0; i--) {
-        const element = sectionElements[i];
-        if (element) {
-          const top = element.offsetTop;
-          if (currentPosition >= top) {
-            setActiveSection(sections[i]);
-            break;
-          }
-        }
-      }
     };
     
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const scrollToSection = (sectionId: string) => {
-    setIsOpen(false);
-    setActiveSection(sectionId);
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
+  const navItems = [
+    { name: 'Home', path: '/' },
+    { name: 'How It Works', path: '/how-it-works' },
+    { name: 'Devlog', path: '/devlog' },
+    { name: 'Demo', path: '/demo' },
+    { name: 'About', path: '/about' },
+  ];
 
   return (
     <nav 
@@ -60,18 +43,18 @@ export default function Navbar() {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-1">
-            {['home', 'how-it-works', 'devlog', 'demo', 'about-me'].map((item) => (
-              <button
-                key={item}
-                onClick={() => scrollToSection(item)}
+            {navItems.map((item) => (
+              <Link
+                key={item.path}
+                href={item.path}
                 className={`px-4 py-2 border-[2px] rounded-md font-bold transition-all shadow-[2px_2px_0_0_rgba(0,0,0,1)] hover:shadow-[1px_1px_0_0_rgba(0,0,0,1)] hover:translate-x-[1px] hover:translate-y-[1px] ${
-                  activeSection === item 
+                  pathname === item.path 
                     ? 'bg-black text-white border-black' 
                     : 'bg-white text-black border-black hover:bg-black hover:text-white'
                 }`}
               >
-                {item.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ')}
-              </button>
+                {item.name}
+              </Link>
             ))}
           </div>
 
@@ -90,18 +73,19 @@ export default function Navbar() {
         {isOpen && (
           <div className="md:hidden mt-4 pb-4 border-t-2 border-black pt-4">
             <div className="flex flex-col space-y-3">
-              {['home', 'how-it-works', 'devlog', 'demo', 'about-me'].map((item) => (
-                <button
-                  key={item}
-                  onClick={() => scrollToSection(item)}
+              {navItems.map((item) => (
+                <Link
+                  key={item.path}
+                  href={item.path}
+                  onClick={() => setIsOpen(false)}
                   className={`px-4 py-2 border-[2px] rounded-md font-bold transition-all shadow-[2px_2px_0_0_rgba(0,0,0,1)] text-left ${
-                    activeSection === item 
+                    pathname === item.path 
                       ? 'bg-black text-white border-black' 
                       : 'bg-white text-black border-black hover:bg-black hover:text-white'
                   }`}
                 >
-                  {item.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ')}
-                </button>
+                  {item.name}
+                </Link>
               ))}
             </div>
           </div>
