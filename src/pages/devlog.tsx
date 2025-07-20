@@ -2,27 +2,47 @@ import Layout from "../components/Layout";
 import Head from "next/head";
 
 export default function Devlog() {
-  // Sample devlog entries
+  // Development log entries from the project's git history
   const devlogEntries = [
     {
-      date: "June 15, 2023",
+      date: "July 19, 2025",
+      title: "MCP Integration Complete",
+      content: "Merged the Model Context Protocol (MCP) feature branch. This integration allows AI systems to interact with Sandstore directly through a standardized interface. The MCP server now supports file operations including storing, reading, and deleting files."
+    },
+    {
+      date: "July 13, 2025",
+      title: "MCP Server Development",
+      content: "Started implementing the Model Context Protocol server. Added configuration loading functionality and created a dummy MCP server for initial testing. Updated the Makefile to include MCP binary creation."
+    },
+    {
+      date: "July 12, 2025",
+      title: "Error Standardization",
+      content: "Standardized error handling across all components including the file service, chunk service, communicator, metadata replicator, and node registry. This improves debugging and creates a consistent error reporting system."
+    },
+    {
+      date: "July 12, 2025",
+      title: "Logging System Integration",
+      content: "Added comprehensive logging service integration across all system components. This includes the file service, chunk replicator, communicators, and metadata services, enabling better system monitoring and debugging."
+    },
+    {
+      date: "June 14, 2025",
+      title: "Client-Server Testing",
+      content: "Simplified the client and server implementations to facilitate testing. Improved the client's main functionality and streamlined the server implementation for more reliable test scenarios."
+    },
+    {
+      date: "June 13, 2025",
+      title: "Communication Layer Improvements",
+      content: "Updated the server implementation and simplified the Communicator interface to make it more modular. These changes enhance the system's flexibility and maintainability."
+    },
+    {
+      date: "June 10, 2025",
+      title: "HTTP Communicator Implementation",
+      content: "Developed the HTTP communicator component with functions for message handling, sending, and receiving. Added server functionality for message processing and implemented the core server structure."
+    },
+    {
+      date: "June 9, 2025",
       title: "Project Inception",
-      content: "Started working on the initial design for Sandstore. The goal is to create a distributed file system that's easy to understand and modify."
-    },
-    {
-      date: "August 3, 2023",
-      title: "Metadata Service Implementation",
-      content: "Completed the first version of the metadata service. It can now track file chunks across the system."
-    },
-    {
-      date: "October 12, 2023",
-      title: "Chunk Server Protocol",
-      content: "Defined the protocol for chunk servers to communicate with each other and with the metadata service."
-    },
-    {
-      date: "January 20, 2024",
-      title: "MCP Integration",
-      content: "Added Model Context Protocol support to allow AI systems to interact with Sandstore directly."
+      content: "Initialized the Sandstore project with the core message structure and communicator interface. The goal is to create a distributed file system that's easy to understand and modify."
     }
   ];
 
