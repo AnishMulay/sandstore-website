@@ -9,6 +9,9 @@ export default function Home() {
       <main className="min-h-screen bg-[#f2e4d8] pt-24 pb-12 px-4 md:px-6 flex flex-col items-center justify-center font-sans">
         {/* Hero Section */}
         <section id="home" className="w-full max-w-4xl mb-16">
+          <div className="sticky top-20 z-10 bg-[#f2e4d8] py-2 mb-4 text-center rounded-lg border-2 border-black shadow-md hidden md:block">
+            <h2 className="text-lg font-bold">Home</h2>
+          </div>
           <div className="bg-[#fff5ed] border-[3px] border-black p-6 md:p-8 shadow-[8px_8px_0_0_rgba(0,0,0,1)] w-full rounded-lg">
             <div className="flex justify-between mb-6">
               <div className="flex gap-2">
@@ -60,6 +63,9 @@ export default function Home() {
         
         {/* What Is Sandstore Section */}
         <section className="w-full max-w-4xl mb-16">
+          <div className="sticky top-20 z-10 bg-[#f2e4d8] py-2 mb-4 text-center rounded-lg border-2 border-black shadow-md hidden md:block">
+            <h2 className="text-lg font-bold">What Is Sandstore?</h2>
+          </div>
           <div className="bg-[#fff5ed] border-[3px] border-black p-6 md:p-8 shadow-[8px_8px_0_0_rgba(0,0,0,1)] w-full rounded-lg">
             <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center">What Is Sandstore?</h2>
             
@@ -93,6 +99,9 @@ export default function Home() {
         
         {/* Why It's Different Section */}
         <section id="how-it-works" className="w-full max-w-4xl mb-16">
+          <div className="sticky top-20 z-10 bg-[#f2e4d8] py-2 mb-4 text-center rounded-lg border-2 border-black shadow-md hidden md:block">
+            <h2 className="text-lg font-bold">How It Works</h2>
+          </div>
           <div className="bg-[#fff5ed] border-[3px] border-black p-6 md:p-8 shadow-[8px_8px_0_0_rgba(0,0,0,1)] w-full rounded-lg">
             <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center">Why It's Different</h2>
             
@@ -141,7 +150,10 @@ export default function Home() {
         </section>
         
         {/* Founder's Note Section */}
-        <section className="w-full max-w-4xl mb-16">
+        <section id="about-me" className="w-full max-w-4xl mb-16">
+          <div className="sticky top-20 z-10 bg-[#f2e4d8] py-2 mb-4 text-center rounded-lg border-2 border-black shadow-md hidden md:block">
+            <h2 className="text-lg font-bold">About Me</h2>
+          </div>
           <div className="bg-[#fff5ed] border-[3px] border-black p-6 md:p-8 shadow-[8px_8px_0_0_rgba(0,0,0,1)] w-full rounded-lg">
             <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center">Your Vision</h2>
             
@@ -163,7 +175,10 @@ export default function Home() {
         </section>
         
         {/* Call to Action Section */}
-        <section className="w-full max-w-4xl mb-16">
+        <section id="devlog" className="w-full max-w-4xl mb-16">
+          <div className="sticky top-20 z-10 bg-[#f2e4d8] py-2 mb-4 text-center rounded-lg border-2 border-black shadow-md hidden md:block">
+            <h2 className="text-lg font-bold">Devlog</h2>
+          </div>
           <div className="bg-[#fff5ed] border-[3px] border-black p-6 md:p-8 shadow-[8px_8px_0_0_rgba(0,0,0,1)] w-full rounded-lg text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">Join the Journey</h2>
             
@@ -192,10 +207,16 @@ export default function Home() {
           </div>
         </section>
         
-        {/* Placeholder sections for navigation - these will be implemented later */}
-        <section id="devlog" className="h-20"></section>
-        <section id="demo" className="h-20"></section>
-        <section id="about-me" className="h-20"></section>
+        {/* Demo section placeholder */}
+        <section id="demo" className="w-full max-w-4xl mb-16">
+          <div className="sticky top-20 z-10 bg-[#f2e4d8] py-2 mb-4 text-center rounded-lg border-2 border-black shadow-md hidden md:block">
+            <h2 className="text-lg font-bold">Demo</h2>
+          </div>
+          <div className="bg-[#fff5ed] border-[3px] border-black p-6 md:p-8 shadow-[8px_8px_0_0_rgba(0,0,0,1)] w-full rounded-lg text-center">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">Demo Coming Soon</h2>
+            <p className="text-lg mb-4">This section will be implemented in the future.</p>
+          </div>
+        </section>
         
         <footer className="w-full max-w-4xl text-center mt-8 text-sm">
           &copy; {new Date().getFullYear()} Sandstore Project by Anish Mulay

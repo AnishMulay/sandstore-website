@@ -6,10 +6,28 @@ import Link from 'next/link';
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState('home');
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
+      
+      // Determine which section is currently in view
+      const sections = ['home', 'how-it-works', 'devlog', 'demo', 'about-me'];
+      const sectionElements = sections.map(id => document.getElementById(id));
+      
+      const currentPosition = window.scrollY + 100; // Adding offset for navbar height
+      
+      for (let i = sectionElements.length - 1; i >= 0; i--) {
+        const element = sectionElements[i];
+        if (element) {
+          const top = element.offsetTop;
+          if (currentPosition >= top) {
+            setActiveSection(sections[i]);
+            break;
+          }
+        }
+      }
     };
     
     window.addEventListener('scroll', handleScroll);
@@ -18,6 +36,7 @@ export default function Navbar() {
 
   const scrollToSection = (sectionId: string) => {
     setIsOpen(false);
+    setActiveSection(sectionId);
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
@@ -45,7 +64,11 @@ export default function Navbar() {
               <button
                 key={item}
                 onClick={() => scrollToSection(item)}
-                className="px-4 py-2 border-[2px] border-black rounded-md font-bold hover:bg-black hover:text-white transition-colors shadow-[2px_2px_0_0_rgba(0,0,0,1)] hover:shadow-[1px_1px_0_0_rgba(0,0,0,1)] hover:translate-x-[1px] hover:translate-y-[1px]"
+                className={`px-4 py-2 border-[2px] rounded-md font-bold transition-all shadow-[2px_2px_0_0_rgba(0,0,0,1)] hover:shadow-[1px_1px_0_0_rgba(0,0,0,1)] hover:translate-x-[1px] hover:translate-y-[1px] ${
+                  activeSection === item 
+                    ? 'bg-black text-white border-black' 
+                    : 'bg-white text-black border-black hover:bg-black hover:text-white'
+                }`}
               >
                 {item.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ')}
               </button>
@@ -71,7 +94,11 @@ export default function Navbar() {
                 <button
                   key={item}
                   onClick={() => scrollToSection(item)}
-                  className="px-4 py-2 border-[2px] border-black rounded-md font-bold hover:bg-black hover:text-white transition-colors shadow-[2px_2px_0_0_rgba(0,0,0,1)] text-left"
+                  className={`px-4 py-2 border-[2px] rounded-md font-bold transition-all shadow-[2px_2px_0_0_rgba(0,0,0,1)] text-left ${
+                    activeSection === item 
+                      ? 'bg-black text-white border-black' 
+                      : 'bg-white text-black border-black hover:bg-black hover:text-white'
+                  }`}
                 >
                   {item.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ')}
                 </button>
