@@ -20,17 +20,21 @@ export default function About() {
             <h1 className="text-3xl md:text-4xl font-bold mb-6 text-center">About</h1>
             
             <div className="bg-white border-[2px] border-black p-6 shadow-[4px_4px_0_0_rgba(0,0,0,1)] rounded-lg mb-8">
-              <div className="flex flex-col md:flex-row items-center md:items-start gap-6 mb-6">
-                <div className="w-32 h-32 bg-[#f2e4d8] rounded-full flex items-center justify-center border-2 border-black text-4xl">
-                  👋
+              <div className="flex flex-col items-center mb-6">
+                <div className="w-40 h-40 rounded-full border-2 border-black overflow-hidden mb-4">
+                  <img 
+                    src="/profile-photo.jpg" 
+                    alt="Anish Mulay" 
+                    className="w-full h-full object-cover"
+                  />
                 </div>
-                <div>
+                <div className="text-center">
                   <h2 className="text-2xl font-bold mb-1">Anish Mulay</h2>
                   <p className="text-gray-600 mb-4">Creator & Maintainer</p>
-                  <p className="text-lg">
-                    I built Sandstore because I couldn't find a hands-on way to learn distributed systems. Everything was abstract or theoretical. I wanted to create something real, where people can experiment, fail, and understand — all in a safe, modular environment.
-                  </p>
                 </div>
+                <p className="text-lg text-center">
+                  I built Sandstore because I couldn't find a hands-on way to learn distributed systems. Everything was abstract or theoretical. I wanted to create something real, where people can experiment, fail, and understand — all in a safe, modular environment.
+                </p>
               </div>
               
               <div className="flex flex-wrap gap-3 justify-center md:justify-start">
