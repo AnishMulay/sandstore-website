@@ -90,7 +90,7 @@ export default function HowItWorks() {
                 <h3 className="text-xl font-bold mb-3">Communicator</h3>
                 <p className="mb-4">Handles all network communication between system components. Implements both gRPC and HTTP protocols for message passing.</p>
                 <a 
-                  href="https://github.com" 
+                  href="https://github.com/AnishMulay/sandstore/tree/main/internal/communication" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="inline-block border-[2px] border-black px-4 py-2 shadow-[2px_2px_0_0_rgba(0,0,0,1)] bg-white rounded-md font-bold hover:translate-y-[1px] hover:translate-x-[1px] hover:shadow-[1px_1px_0_0_rgba(0,0,0,1)] transition-all text-sm"
@@ -104,7 +104,7 @@ export default function HowItWorks() {
                 <h3 className="text-xl font-bold mb-3">Metadata Service</h3>
                 <p className="mb-4">Tracks file metadata including chunk locations, sizes, and replication status. Provides a clean interface for metadata operations.</p>
                 <a 
-                  href="https://github.com" 
+                  href="https://github.com/AnishMulay/sandstore/tree/main/internal/metadata_service" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="inline-block border-[2px] border-black px-4 py-2 shadow-[2px_2px_0_0_rgba(0,0,0,1)] bg-white rounded-md font-bold hover:translate-y-[1px] hover:translate-x-[1px] hover:shadow-[1px_1px_0_0_rgba(0,0,0,1)] transition-all text-sm"
@@ -118,7 +118,7 @@ export default function HowItWorks() {
                 <h3 className="text-xl font-bold mb-3">Chunk Replicator</h3>
                 <p className="mb-4">Manages data redundancy by replicating chunks across multiple nodes. Implements configurable replication strategies.</p>
                 <a 
-                  href="https://github.com" 
+                  href="https://github.com/AnishMulay/sandstore/tree/main/internal/chunk_replicator" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="inline-block border-[2px] border-black px-4 py-2 shadow-[2px_2px_0_0_rgba(0,0,0,1)] bg-white rounded-md font-bold hover:translate-y-[1px] hover:translate-x-[1px] hover:shadow-[1px_1px_0_0_rgba(0,0,0,1)] transition-all text-sm"
@@ -132,7 +132,7 @@ export default function HowItWorks() {
                 <h3 className="text-xl font-bold mb-3">Chunk Service</h3>
                 <p className="mb-4">Handles the actual storage and retrieval of data chunks. Supports pluggable storage backends including local disk and memory.</p>
                 <a 
-                  href="https://github.com" 
+                  href="https://github.com/AnishMulay/sandstore/tree/main/internal/chunk_service" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="inline-block border-[2px] border-black px-4 py-2 shadow-[2px_2px_0_0_rgba(0,0,0,1)] bg-white rounded-md font-bold hover:translate-y-[1px] hover:translate-x-[1px] hover:shadow-[1px_1px_0_0_rgba(0,0,0,1)] transition-all text-sm"
@@ -146,7 +146,7 @@ export default function HowItWorks() {
                 <h3 className="text-xl font-bold mb-3">MCP Server</h3>
                 <p className="mb-4">Implements the Model Context Protocol for AI integration. Exposes file operations as tools that can be used by AI systems.</p>
                 <a 
-                  href="https://github.com" 
+                  href="https://github.com/AnishMulay/sandstore/tree/main/cmd/mcp" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="inline-block border-[2px] border-black px-4 py-2 shadow-[2px_2px_0_0_rgba(0,0,0,1)] bg-white rounded-md font-bold hover:translate-y-[1px] hover:translate-x-[1px] hover:shadow-[1px_1px_0_0_rgba(0,0,0,1)] transition-all text-sm"
@@ -270,7 +270,7 @@ export default function HowItWorks() {
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a 
-                href="https://github.com" 
+                href="https://github.com/AnishMulay/sandstore" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="border-[3px] border-black px-6 py-3 shadow-[4px_4px_0_0_rgba(0,0,0,1)] bg-white rounded-lg font-bold hover:translate-y-[2px] hover:translate-x-[2px] hover:shadow-[2px_2px_0_0_rgba(0,0,0,1)] transition-all flex items-center justify-center gap-2"

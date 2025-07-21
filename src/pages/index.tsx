@@ -36,7 +36,7 @@ export default function Home() {
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10">
                 <a 
-                  href="https://github.com" 
+                  href="https://github.com/AnishMulay/sandstore" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="border-[3px] border-black px-6 py-3 shadow-[4px_4px_0_0_rgba(0,0,0,1)] bg-white rounded-lg font-bold hover:translate-y-[2px] hover:translate-x-[2px] hover:shadow-[2px_2px_0_0_rgba(0,0,0,1)] transition-all flex items-center justify-center gap-2"
@@ -96,7 +96,7 @@ export default function Home() {
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
               <a 
-                href="https://github.com" 
+                href="https://github.com/AnishMulay/sandstore" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="border-[3px] border-black px-6 py-3 shadow-[4px_4px_0_0_rgba(0,0,0,1)] bg-white rounded-lg font-bold hover:translate-y-[2px] hover:translate-x-[2px] hover:shadow-[2px_2px_0_0_rgba(0,0,0,1)] transition-all flex items-center justify-center gap-2"
