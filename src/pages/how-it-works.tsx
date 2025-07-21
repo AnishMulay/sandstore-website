@@ -70,13 +70,7 @@ export default function HowItWorks() {
           <div className="bg-[#fff5ed] border-[3px] border-black p-6 md:p-8 shadow-[8px_8px_0_0_rgba(0,0,0,1)] w-full rounded-lg">
             <h2 className="text-2xl md:text-3xl font-bold mb-6">System Architecture</h2>
             
-            {/* Architecture Diagram Placeholder */}
-            <div className="bg-white border-[2px] border-black p-5 shadow-[4px_4px_0_0_rgba(0,0,0,1)] rounded-lg mb-6 aspect-video flex items-center justify-center">
-              <div className="text-center">
-                <div className="text-4xl mb-2">📊</div>
-                <p className="font-mono text-sm">Architecture Diagram Placeholder</p>
-              </div>
-            </div>
+
             
             <div className="bg-white border-[2px] border-black p-5 shadow-[4px_4px_0_0_rgba(0,0,0,1)] rounded-lg">
               <h3 className="text-xl font-bold mb-3">Client Interaction Flow</h3>
@@ -268,44 +262,7 @@ export default function HowItWorks() {
           </div>
         </section>
         
-        {/* Section 7: Tech Stack */}
-        <section className="w-full max-w-4xl mb-12">
-          <div className="bg-[#fff5ed] border-[3px] border-black p-6 md:p-8 shadow-[8px_8px_0_0_rgba(0,0,0,1)] w-full rounded-lg">
-            <h2 className="text-2xl md:text-3xl font-bold mb-6">Tech Stack</h2>
-            
-            <div className="flex flex-wrap justify-center gap-4">
-              <div className="bg-white border-[2px] border-black p-3 shadow-[4px_4px_0_0_rgba(0,0,0,1)] rounded-lg w-24 h-24 flex flex-col items-center justify-center">
-                <span className="text-2xl">🦫</span>
-                <span className="font-bold mt-2">Go</span>
-              </div>
-              
-              <div className="bg-white border-[2px] border-black p-3 shadow-[4px_4px_0_0_rgba(0,0,0,1)] rounded-lg w-24 h-24 flex flex-col items-center justify-center">
-                <span className="text-2xl">📡</span>
-                <span className="font-bold mt-2">gRPC</span>
-              </div>
-              
-              <div className="bg-white border-[2px] border-black p-3 shadow-[4px_4px_0_0_rgba(0,0,0,1)] rounded-lg w-24 h-24 flex flex-col items-center justify-center">
-                <span className="text-2xl">🐳</span>
-                <span className="font-bold mt-2">Docker</span>
-              </div>
-              
-              <div className="bg-white border-[2px] border-black p-3 shadow-[4px_4px_0_0_rgba(0,0,0,1)] rounded-lg w-24 h-24 flex flex-col items-center justify-center">
-                <span className="text-2xl">🤖</span>
-                <span className="font-bold mt-2">QCLI</span>
-              </div>
-              
-              <div className="bg-white border-[2px] border-black p-3 shadow-[4px_4px_0_0_rgba(0,0,0,1)] rounded-lg w-24 h-24 flex flex-col items-center justify-center">
-                <span className="text-2xl">🐙</span>
-                <span className="font-bold mt-2">GitHub</span>
-              </div>
-              
-              <div className="bg-white border-[2px] border-black p-3 shadow-[4px_4px_0_0_rgba(0,0,0,1)] rounded-lg w-24 h-24 flex flex-col items-center justify-center">
-                <span className="text-2xl">🌬️</span>
-                <span className="font-bold mt-2">Tailwind</span>
-              </div>
-            </div>
-          </div>
-        </section>
+
         
         {/* Section 8: Call to Action */}
         <section className="w-full max-w-4xl mb-16">
