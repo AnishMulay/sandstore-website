@@ -65,22 +65,17 @@ export default function HowItWorks() {
           </div>
         </section>
         
-        {/* Section 2: System Architecture */}
+        {/* Section 2: Client Interaction Flow */}
         <section className="w-full max-w-4xl mb-12">
           <div className="bg-[#fff5ed] border-[3px] border-black p-6 md:p-8 shadow-[8px_8px_0_0_rgba(0,0,0,1)] w-full rounded-lg">
-            <h2 className="text-2xl md:text-3xl font-bold mb-6">System Architecture</h2>
+            <h2 className="text-2xl md:text-3xl font-bold mb-6">Client Interaction Flow</h2>
             
-
-            
-            <div className="bg-white border-[2px] border-black p-5 shadow-[4px_4px_0_0_rgba(0,0,0,1)] rounded-lg">
-              <h3 className="text-xl font-bold mb-3">Client Interaction Flow</h3>
-              <p className="mb-4">
-                Clients interact with Sandstore through two primary interfaces: the standard client library and the Model Context Protocol (MCP) server. The client library provides direct API access for applications, while the MCP server enables AI systems and tools to interact with the file system using natural language commands.              
-              </p>
-              <p>
-                When a client makes a request, it's routed through the appropriate node in the system. Metadata operations are handled by the metadata service, while data operations involve both metadata lookups and chunk server interactions. The system's modular design allows each component to be swapped or modified independently, making it ideal for learning and experimentation.
-              </p>
-            </div>
+            <p className="mb-4">
+              Clients interact with Sandstore through two primary interfaces: the standard client library and the Model Context Protocol (MCP) server. The client library provides direct API access for applications, while the MCP server enables AI systems and tools to interact with the file system using natural language commands.              
+            </p>
+            <p>
+              When a client makes a request, it's routed through the appropriate node in the system. Metadata operations are handled by the metadata service, while data operations involve both metadata lookups and chunk server interactions. The system's modular design allows each component to be swapped or modified independently, making it ideal for learning and experimentation.
+            </p>
           </div>
         </section>
         
