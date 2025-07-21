@@ -69,20 +69,7 @@ export default function Devlog() {
               ))}
             </div>
             
-            <div className="mt-8 bg-[#f2e4d8] border-[2px] border-black p-5 shadow-[4px_4px_0_0_rgba(0,0,0,1)] rounded-lg text-center">
-              <h3 className="text-xl font-bold mb-3">Subscribe to Updates</h3>
-              <p className="mb-4">Get notified when new development updates are posted</p>
-              <div className="flex flex-col sm:flex-row gap-2 justify-center">
-                <input 
-                  type="email" 
-                  placeholder="Your email address" 
-                  className="border-[2px] border-black px-4 py-2 rounded-md focus:outline-none"
-                />
-                <button className="border-[3px] border-black px-6 py-2 shadow-[4px_4px_0_0_rgba(0,0,0,1)] bg-white rounded-lg font-bold hover:translate-y-[2px] hover:translate-x-[2px] hover:shadow-[2px_2px_0_0_rgba(0,0,0,1)] transition-all">
-                  Subscribe
-                </button>
-              </div>
-            </div>
+
           </div>
         </section>
       </Layout>

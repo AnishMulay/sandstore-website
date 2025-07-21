@@ -109,12 +109,14 @@ export default function Home() {
               >
                 📺 Watch the Demo
               </Link>
-              <Link 
-                href="/devlog" 
+              <a 
+                href="https://discord.gg/6xWrtWQMMT" 
+                target="_blank" 
+                rel="noopener noreferrer"
                 className="border-[3px] border-black px-6 py-3 shadow-[4px_4px_0_0_rgba(0,0,0,1)] bg-white rounded-lg font-bold hover:translate-y-[2px] hover:translate-x-[2px] hover:shadow-[2px_2px_0_0_rgba(0,0,0,1)] transition-all flex items-center justify-center gap-2"
               >
-                🧠 Learn with Me
-              </Link>
+                💬 Join Discord
+              </a>
             </div>
           </div>
         </section>
