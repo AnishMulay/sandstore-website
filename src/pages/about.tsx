@@ -4,9 +4,8 @@ import Link from "next/link";
 
 export default function About() {
   const socialLinks = [
-    { name: "GitHub", url: "https://github.com", icon: "github" },
-    { name: "Twitter", url: "https://twitter.com", icon: "twitter" },
-    { name: "LinkedIn", url: "https://linkedin.com", icon: "linkedin" }
+    { name: "GitHub", url: "https://github.com/AnishMulay", icon: "github" },
+    { name: "LinkedIn", url: "https://www.linkedin.com/in/anish-mulay/", icon: "linkedin" }
   ];
 
   return (
@@ -27,7 +26,7 @@ export default function About() {
                 </div>
                 <div>
                   <h2 className="text-2xl font-bold mb-1">Anish Mulay</h2>
-                  <p className="text-gray-600 mb-4">Founder & Developer</p>
+                  <p className="text-gray-600 mb-4">Creator & Maintainer</p>
                   <p className="text-lg">
                     I built Sandstore because I couldn't find a hands-on way to learn distributed systems. Everything was abstract or theoretical. I wanted to create something real, where people can experiment, fail, and understand — all in a safe, modular environment.
                   </p>
@@ -67,7 +66,7 @@ export default function About() {
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a 
-                  href="https://github.com" 
+                  href="https://github.com/AnishMulay/sandstore" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="border-[3px] border-black px-6 py-3 shadow-[4px_4px_0_0_rgba(0,0,0,1)] bg-white rounded-lg font-bold hover:translate-y-[2px] hover:translate-x-[2px] hover:shadow-[2px_2px_0_0_rgba(0,0,0,1)] transition-all flex items-center justify-center gap-2"
