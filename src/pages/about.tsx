@@ -24,7 +24,7 @@ export default function About() {
                 <h2 className="text-2xl font-bold mb-1">Anish Mulay</h2>
                 <p className="text-gray-600 mb-4">Creator & Maintainer</p>
                 <p className="text-lg">
-                  I built Sandstore because I couldn't find a hands-on way to learn distributed systems. Everything was abstract or theoretical. I wanted to create something real, where people can experiment, fail, and understand — all in a safe, modular environment.
+                  I built Sandstore because I couldn't find a hands-on way to learn distributed systems. Everything was abstract or theoretical. Sandstore provides a real, working distributed file system with Raft consensus, file chunking, and metadata replication — all implemented with clean, readable Go code that you can actually understand and modify.
                 </p>
               </div>
               
@@ -46,10 +46,10 @@ export default function About() {
             <div className="bg-white border-[2px] border-black p-6 shadow-[4px_4px_0_0_rgba(0,0,0,1)] rounded-lg mb-8">
               <h2 className="text-2xl font-bold mb-4">Project Vision</h2>
               <p className="mb-4">
-                Sandstore aims to be the go-to learning resource for distributed systems. By providing a real, working implementation with clean interfaces and modular components, it bridges the gap between theory and practice.
+                Sandstore demonstrates core distributed systems concepts through a working implementation. With features like Raft consensus, file chunking, metadata replication, and AI integration, it provides a comprehensive learning platform for understanding how distributed systems actually work.
               </p>
               <p>
-                The project is designed to be accessible to students, educators, and engineers who want to understand how distributed file systems work without getting lost in the complexity of production systems.
+                The modular architecture with clean interfaces makes it easy to study individual components, experiment with modifications, and understand the interactions between different parts of a distributed system.
               </p>
             </div>
             
