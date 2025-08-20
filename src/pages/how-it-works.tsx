@@ -1,5 +1,6 @@
 import Layout from "../components/Layout";
 import Head from "next/head";
+import RaftScrollStory from "../components/RaftScrollStory";
 
 export default function HowItWorks() {
   return (
@@ -230,6 +231,8 @@ export default function HowItWorks() {
             </div>
           </div>
         </section>
+        
+        <RaftScrollStory />
       </Layout>
     </>
   );
