@@ -12,21 +12,21 @@ const steps: StepData[] = [
   {
     step: 0,
     title: "Client Request",
-    description: "A client sends a store-file request to the Raft cluster leader. The leader receives the request and prepares to replicate it across the cluster."
+    description: "A client sends a store-file request to the cluster leader. The leader receives the request and prepares to replicate the metadata operation across the cluster."
   },
   {
     step: 1,
     title: "Log Replication",
-    description: "The leader appends the store-file entry to its log and replicates it to all follower nodes in the cluster simultaneously."
+    description: "The leader appends the metadata entry to its Raft log and replicates it to all follower nodes simultaneously."
   },
   {
     step: 2,
     title: "Follower Acknowledgment",
-    description: "Each follower receives the log entry, appends it to their own log, and sends an acknowledgment back to the leader."
+    description: "Each follower appends the entry to its own log and sends an acknowledgment back to the leader."
   },
   {
     step: 3,
-    title: "Commit & Response",
+    title: "Commit and Response",
     description: "Once the leader receives acknowledgments from a majority of nodes, it commits the entry and responds to the client with success."
   }
 ];
@@ -38,7 +38,7 @@ export default function RaftScrollStory() {
   useEffect(() => {
     const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
     setPrefersReducedMotion(mediaQuery.matches);
-    
+
     const handler = (e: MediaQueryListEvent) => setPrefersReducedMotion(e.matches);
     mediaQuery.addEventListener('change', handler);
     return () => mediaQuery.removeEventListener('change', handler);
@@ -50,11 +50,11 @@ export default function RaftScrollStory() {
 
   return (
     <section className="w-full max-w-6xl mb-16">
-      <div className="bg-[#fff5ed] border-[3px] border-black p-6 md:p-8 shadow-[8px_8px_0_0_rgba(0,0,0,1)] w-full rounded-lg">
+      <div className="bg-[#fff5ed] border-[3px] border-black p-6 md:p-8 shadow-[8px_8px_0_0_rgba(0,0,0,1)] w-full ">
         <div className="text-center mb-8">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">How Store-File Works in Raft</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Consensus in Action: A Write Request</h2>
           <p className="text-lg text-gray-600 mb-2">
-            Scroll down to see the animation
+            This shows one write request moving through the active Raft topology. The interfaces that drive this behavior are swappable.
           </p>
           <div className="text-sm text-gray-500">
             ↓ Scroll to explore each step ↓
@@ -68,11 +68,10 @@ export default function RaftScrollStory() {
               {steps.map((step, index) => (
                 <Step data={index} key={index}>
                   <div className="min-h-[400px] flex items-center">
-                    <div className={`bg-white border-[2px] border-black p-6 shadow-[4px_4px_0_0_rgba(0,0,0,1)] rounded-lg transition-all duration-300 ${
-                      currentStep === index ? 'scale-105 shadow-[6px_6px_0_0_rgba(0,0,0,1)]' : 'opacity-60'
-                    }`}>
+                    <div className={`bg-white border-[2px] border-black p-6 shadow-[4px_4px_0_0_rgba(0,0,0,1)]  transition-all duration-300 ${currentStep === index ? 'scale-105 shadow-[6px_6px_0_0_rgba(0,0,0,1)]' : 'opacity-60'
+                      }`}>
                       <div className="flex items-center mb-4">
-                        <div className="bg-black text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-3">
+                        <div className="bg-black text-white  w-8 h-8 flex items-center justify-center font-bold mr-3">
                           {index + 1}
                         </div>
                         <h3 className="text-xl font-bold">{step.title}</h3>
@@ -87,7 +86,7 @@ export default function RaftScrollStory() {
 
           {/* Right Column - Sticky Visualization */}
           <div className="lg:sticky lg:top-24 lg:h-fit">
-            <div className="bg-white border-[2px] border-black p-6 shadow-[4px_4px_0_0_rgba(0,0,0,1)] rounded-lg">
+            <div className="bg-white border-[2px] border-black p-6 shadow-[4px_4px_0_0_rgba(0,0,0,1)] ">
               <RaftVisualization currentStep={currentStep} prefersReducedMotion={prefersReducedMotion} />
             </div>
           </div>
@@ -104,52 +103,52 @@ interface RaftVisualizationProps {
 
 function RaftVisualization({ currentStep, prefersReducedMotion }: RaftVisualizationProps) {
   const animationDuration = prefersReducedMotion ? 0 : 0.8;
-  
+
   return (
     <div className="w-full h-96 relative">
       <svg viewBox="0 0 700 400" className="w-full h-full">
         {/* Client */}
         <motion.g
-          animate={{ 
+          animate={{
             scale: currentStep === 0 ? 1.1 : 1,
             opacity: currentStep === 3 ? 0.7 : 1
           }}
           transition={{ duration: animationDuration }}
         >
-          <rect x="80" y="175" width="80" height="50" rx="8" fill="#f2e4d8" stroke="black" strokeWidth="3"/>
+          <rect x="80" y="175" width="80" height="50" rx="8" fill="#f2e4d8" stroke="black" strokeWidth="3" />
           <text x="120" y="205" textAnchor="middle" fill="black" fontSize="14" fontWeight="bold">Client</text>
         </motion.g>
 
         {/* Leader */}
         <motion.g
-          animate={{ 
+          animate={{
             scale: [0, 1, 2, 3].includes(currentStep) ? 1.1 : 1
           }}
           transition={{ duration: animationDuration }}
         >
-          <rect x="310" y="175" width="80" height="50" rx="8" fill="#fff5ed" stroke="black" strokeWidth="3"/>
+          <rect x="310" y="175" width="80" height="50" rx="8" fill="#fff5ed" stroke="black" strokeWidth="3" />
           <text x="350" y="205" textAnchor="middle" fill="black" fontSize="14" fontWeight="bold">Leader</text>
         </motion.g>
 
         {/* Follower 1 */}
         <motion.g
-          animate={{ 
+          animate={{
             scale: [1, 2].includes(currentStep) ? 1.1 : 1
           }}
           transition={{ duration: animationDuration }}
         >
-          <rect x="540" y="110" width="80" height="50" rx="8" fill="white" stroke="black" strokeWidth="3"/>
+          <rect x="540" y="110" width="80" height="50" rx="8" fill="white" stroke="black" strokeWidth="3" />
           <text x="580" y="140" textAnchor="middle" fill="black" fontSize="14" fontWeight="bold">Follower</text>
         </motion.g>
 
         {/* Follower 2 */}
         <motion.g
-          animate={{ 
+          animate={{
             scale: [1, 2].includes(currentStep) ? 1.1 : 1
           }}
           transition={{ duration: animationDuration }}
         >
-          <rect x="540" y="240" width="80" height="50" rx="8" fill="white" stroke="black" strokeWidth="3"/>
+          <rect x="540" y="240" width="80" height="50" rx="8" fill="white" stroke="black" strokeWidth="3" />
           <text x="580" y="270" textAnchor="middle" fill="black" fontSize="14" fontWeight="bold">Follower</text>
         </motion.g>
 
@@ -228,7 +227,7 @@ function RaftVisualization({ currentStep, prefersReducedMotion }: RaftVisualizat
                 cy="185"
                 r="3"
                 fill="black"
-                animate={{ 
+                animate={{
                   cx: [390, 540],
                   cy: [185, 135]
                 }}
@@ -239,7 +238,7 @@ function RaftVisualization({ currentStep, prefersReducedMotion }: RaftVisualizat
                 cy="215"
                 r="3"
                 fill="black"
-                animate={{ 
+                animate={{
                   cx: [390, 540],
                   cy: [215, 265]
                 }}
@@ -292,7 +291,7 @@ function RaftVisualization({ currentStep, prefersReducedMotion }: RaftVisualizat
                 cy="145"
                 r="3"
                 fill="black"
-                animate={{ 
+                animate={{
                   cx: [540, 390],
                   cy: [145, 195]
                 }}
@@ -303,7 +302,7 @@ function RaftVisualization({ currentStep, prefersReducedMotion }: RaftVisualizat
                 cy="255"
                 r="3"
                 fill="black"
-                animate={{ 
+                animate={{
                   cx: [540, 390],
                   cy: [255, 205]
                 }}

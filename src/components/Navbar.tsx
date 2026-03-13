@@ -13,7 +13,7 @@ export default function Navbar() {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
     };
-    
+
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -22,20 +22,19 @@ export default function Navbar() {
     { name: 'Home', path: '/' },
     { name: 'How It Works', path: '/how-it-works' },
     { name: 'Devlog', path: '/devlog' },
-    { name: 'Demo', path: '/demo' },
+    { name: 'Architectures', path: '/architectures' },
     { name: 'About', path: '/about' },
   ];
 
   return (
-    <nav 
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-        isScrolled ? 'py-2' : 'py-4'
-      } bg-[#fff5ed] border-b-[3px] border-black`}
+    <nav
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'py-2' : 'py-4'
+        } bg-[#fff5ed] border-b-[3px] border-black`}
     >
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center">
-          <Link 
-            href="/" 
+          <Link
+            href="/"
             className="text-xl md:text-2xl font-black text-gray-900 hover:opacity-80 transition-opacity"
           >
             Sandstore
@@ -47,11 +46,10 @@ export default function Navbar() {
               <Link
                 key={item.path}
                 href={item.path}
-                className={`px-4 py-2 border-[2px] rounded-md font-bold transition-all shadow-[2px_2px_0_0_rgba(0,0,0,1)] hover:shadow-[1px_1px_0_0_rgba(0,0,0,1)] hover:translate-x-[1px] hover:translate-y-[1px] ${
-                  pathname === item.path 
-                    ? 'bg-black text-white border-black' 
+                className={`px-4 py-2 border-[2px]  font-bold transition-all shadow-[2px_2px_0_0_rgba(0,0,0,1)] hover:shadow-[3px_3px_0_0_rgba(0,0,0,1)] hover:-translate-x-[1px] hover:-translate-y-[1px] ${pathname === item.path
+                    ? 'bg-black text-white border-black'
                     : 'bg-white text-black border-black hover:bg-black hover:text-white'
-                }`}
+                  }`}
               >
                 {item.name}
               </Link>
@@ -59,9 +57,9 @@ export default function Navbar() {
           </div>
 
           {/* Mobile Navigation Button */}
-          <button 
+          <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden border-[2px] border-black p-2 rounded-md shadow-[2px_2px_0_0_rgba(0,0,0,1)] hover:shadow-[1px_1px_0_0_rgba(0,0,0,1)] hover:translate-x-[1px] hover:translate-y-[1px]"
+            className="md:hidden border-[2px] border-black p-2  shadow-[2px_2px_0_0_rgba(0,0,0,1)] hover:shadow-[3px_3px_0_0_rgba(0,0,0,1)] hover:-translate-x-[1px] hover:-translate-y-[1px]"
           >
             <div className="w-6 h-0.5 bg-black mb-1.5"></div>
             <div className="w-6 h-0.5 bg-black mb-1.5"></div>
@@ -78,11 +76,10 @@ export default function Navbar() {
                   key={item.path}
                   href={item.path}
                   onClick={() => setIsOpen(false)}
-                  className={`px-4 py-2 border-[2px] rounded-md font-bold transition-all shadow-[2px_2px_0_0_rgba(0,0,0,1)] text-left ${
-                    pathname === item.path 
-                      ? 'bg-black text-white border-black' 
+                  className={`px-4 py-2 border-[2px]  font-bold transition-all shadow-[2px_2px_0_0_rgba(0,0,0,1)] text-left ${pathname === item.path
+                      ? 'bg-black text-white border-black'
                       : 'bg-white text-black border-black hover:bg-black hover:text-white'
-                  }`}
+                    }`}
                 >
                   {item.name}
                 </Link>
